@@ -1,0 +1,76 @@
+/* AdminDashboard.css */
+.admin-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.navigation {
+    width: 250px;
+    background-color: #6a0dad;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.navigation h2 {
+    margin-bottom: 20px;
+}
+
+.navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    margin-bottom: 10px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.content h2 {
+    color: #6a0dad;
+    margin-bottom: 20px;
+}
+
+.manual-entry-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.manual-entry-form label {
+    margin-bottom: 15px;
+}
+
+.manual-entry-form input,
+.manual-entry-form select {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.manual-entry-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #6a0dad;
+    color: #fff;
+    font-weight: bold;
+}
+
+.manual-entry-form button:hover {
+    background-color: #7b1fa2;
+}

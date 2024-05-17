@@ -1,0 +1,53 @@
+/* Registration.css */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ddc7ec; /* Purple background */
+}
+
+.registration-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.registration-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6a0dad; /* Purple text color */
+}
+
+.registration-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-box input[type="text"],
+.registration-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registration-box button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #9d43dd; /* Purple button background */
+    color: #fff;
+    font-weight: bold;
+}
+
+.registration-box button[type="submit"]:hover {
+    background-color: #7b1fa2; /* Darker purple on hover */
+}
+
+
