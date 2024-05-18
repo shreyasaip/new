@@ -1,32 +1,28 @@
-const express = require('express');
-const { MongoClient, ObjectId } = require('mongodb');
-const bodyParser = require('body-parser');
+const express = require("express");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const eventRoutes = require("./routes/eventRoutes");
+const authRoutes = require("./routes/authRoutes");
 const app = express();
-const PORT = 3002;
-const  cors = require('cors');
-
-const uri = 'mongodb://localhost:27017/new'; 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+const PORT = process.env.PORT || 3000;
 app.use(bodyParser.json());
-app.use(cors({origin:'http://localhost:3000'}));
+app.use(cors());
+app.use("/events", eventRoutes);
+app.use("/auth", authRoutes);
 
-const connectToDB = async () => {
-    await client.connect();
-    console.log('Connected to MongoDB');
-};
+mongoose
+  .connect("mongodb://localhost:27017", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connected to MongoDB");
+  })
+  .catch((err) => {
+    console.error("Error connecting to MongoDB", err);
+  });
 
-const db = client.db();
-app.get('/three', async (req, res) => {
-  const collection = db.collection('notesApp');
-    const threeTodos = await collection.find().sort({ updatedAt: -1 }).toArray();
-    res.json(threeTodos);
-});
-
-connectToDB().then(() => {
-    app.listen(PORT, () => {
-        console.log(`Server is running on http://localhost:${PORT}`);
-    });
-}).catch((error) => {
-    console.error('Failed to connect to MongoDB', error);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

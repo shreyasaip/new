@@ -1,0 +1,74 @@
+### Register User
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "example_user",
+    "password": "example_password",
+    "role": "user"
+}
+
+### Admin Register
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "example_admin",
+    "password": "example_password",
+    "role": "admin"
+}
+
+
+### User Login
+POST http://localhost:3000/auth/login/user
+Content-Type: application/json
+
+{
+    "username": "example_user",
+    "password": "example_password"
+}
+
+
+### Admin Login
+POST http://localhost:3000/auth/login/admin
+Content-Type: application/json
+
+{
+    "username": "example_admin",
+    "password": "example_password"
+
+}
+
+### Create Event
+
+POST http://localhost:3000/events/create
+Content-Type: application/json
+
+{
+    "eventName": "Example Event",
+    "category": "technical",
+    "type": "symposium",
+    "department": "aiml",
+    "club": "Example Club",
+    "date": "2024-05-20",
+    "time": "12:00",
+    "location": "Example Location",
+    "fee": 10
+}
+###
+
+POST http://localhost:3000/events/create
+Content-Type: application/json
+
+{
+    "eventName": "New Year Celebration",
+    "category": "non-technical",
+    "type": "party",
+    "department": "cse",
+    "club": "Fun Club",
+    "date": "2024-12-31",
+    "time": "20:00",
+    "location": "Community Hall",
+    "fee": 5
+}
+

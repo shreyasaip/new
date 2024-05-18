@@ -1,26 +1,25 @@
-// src/App.js
+// App.js
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './LogIn';
-import Dashboard from './Dashboard';
-import Registration from './Registration';
-import AdminDashboard from './AdminDashboard';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/LogIn';
+import Registration from './components/Registration';
+import Dashboard from './components/Dashboard';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
     return (
         <Router>
-            <Routes>
-                <Route path="/" element={<Login />} />
-                <Route path="/Dashboard" element={<Dashboard />} />
-                <Route path="/Registration" element={<Registration />} />
-                <Route path="/AdminDashboard" element={<AdminDashboard />} />
-            </Routes>
-            <div>hi</div>
-            <div><Login/></div>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/registration" element={<Registration />} />
+                    <Route path="/dashboard" element={<Dashboard />} /> {/* Assuming Dashboard component exists */}
+                    <Route path="/adminDashboard" element={<AdminDashboard />} /> {/* Assuming AdminDashboard component exists */}
+                    {/* Add more routes as needed */}
+                </Routes>
+            </div>
         </Router>
     );
 }
 
 export default App;
-
-
